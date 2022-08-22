@@ -72,7 +72,7 @@ const thoughtController = {
         }
         return User.findOneAndDelete(
           { _id: params.userId },
-          { $pull: { thoughts: params.thoughtId } },
+          { $pull: { thoughts: params.id } },
           { new: true }
         );
       })
