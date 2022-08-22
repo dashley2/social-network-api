@@ -13,7 +13,7 @@ const thoughtController = {
       });
   },
 
-  // get one thought by id
+  // get thought by id
   getThoughtById({ params }, res) {
     Thought.findOne({ _id: params.id })
       .select("-__v")
@@ -31,11 +31,11 @@ const thoughtController = {
   },
 
   // create thought
-  createThought({ body }, res) {
+  createThought({ params, body }, res) {
     Thought.create(body)
       .then(({ _id }) => {
         return User.findOneAndUpdate(
-          { _id: params.userId },
+		  { _id: req.params.userId },
           { $push: { thoughts: _id } },
           { new: true }
         );
@@ -47,7 +47,7 @@ const thoughtController = {
         }
         res.json(dbUserData);
       })
-      .catch((err) => res.status(400).json(err));
+      .catch((err) => res.json(err));
   },
 
   // update thought by id
@@ -83,7 +83,7 @@ const thoughtController = {
         }
         res.json(dbUserData);
       })
-      .catch((err) => res.status(400).json(err));
+      .catch((err) => res.json(err));
   },
 };
 
