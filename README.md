@@ -1,6 +1,6 @@
 # Social-Network-API
 ## Description
-API for a social network web application that allows users to share thier thoughts, react to friends' thoughts, and create a friend list. This application uses Exptress.js for routing, a MongoDB database, and the Mongoose ODM.
+API for a social network web application that allows users to share thier thoughts, react to friends' thoughts, and create a friend list. This application uses Express.js for routing, a MongoDB database, and the Mongoose ODM.
 ## Table of Contents
 - [Installation](#installation)
 - [Links](#links)
